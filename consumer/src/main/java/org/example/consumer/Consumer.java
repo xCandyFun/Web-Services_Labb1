@@ -28,18 +28,18 @@ public class Consumer {
 
     private static void Switch() {
         List<Number> getANumber = new ArrayList<>();
-        testOnTest(getANumber);
+        numberInALoop(getANumber);
         while (true) {
             Menu(getANumber);
             switch (sc.nextLine()) {
-                case "1" -> System.out.println(getANumber.get(0).numberToPercent(test(sc)));
-                case "2" -> System.out.println(getANumber.get(1).numberToPercent(test(sc)));
+                case "1" -> System.out.println(getANumber.get(0).numberToPercent(secondMenu(sc)));
+                case "2" -> System.out.println(getANumber.get(1).numberToPercent(secondMenu(sc)));
                 case "3" -> System.exit(0);
             }
         }
     }
 
-    private static List<Number> testOnTest(List<Number> getANumber) {
+    private static List<Number> numberInALoop(List<Number> getANumber) {
 
         ServiceLoader<Number> Numbers = ServiceLoader.load(Number.class);
         for (var number : Numbers) {
@@ -49,7 +49,7 @@ public class Consumer {
         return getANumber;
     }
 
-    public static Double test(Scanner sc) {
+    public static Double secondMenu(Scanner sc) {
         System.out.println("""
                 Pick numbers to change to percent.
                 """);
