@@ -1,9 +1,9 @@
-import org.example.provider.EnglishGreeting;
-import org.example.provider.SwedishGreeting;
-import org.example.service.Greeting;
+import org.example.provider.ProcentToNumber;
+import org.example.provider.NumberToProcent;
+import org.example.service.Number;
 
 module org.example.provider {
     requires org.example.service;
 
-    provides Greeting with SwedishGreeting, EnglishGreeting;
+    provides Number with NumberToProcent, ProcentToNumber;
 }
